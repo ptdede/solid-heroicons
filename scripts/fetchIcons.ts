@@ -9,15 +9,17 @@ import { readdir, readFile, outputFile, remove, removeSync } from "fs-extra";
 
 import pkg from "../package.json";
 
+const version = "#v1.0.6";
+
 const TMP = join(process.cwd(), "tmp");
 
-const SOLID_SRC = "tailwindlabs/heroicons/optimized/24/solid";
+const SOLID_SRC = `tailwindlabs/heroicons/optimized/24/solid${version}`;
 const SOLID_DIST = join(TMP, "solid/24");
 
-const SOLID_MINI_SRC = "tailwindlabs/heroicons/optimized/20/solid";
+const SOLID_MINI_SRC = `tailwindlabs/heroicons/optimized/20/solid${version}`;
 const SOLID_MINI_DIST = join(TMP, "solid/20");
 
-const OUTLINE_SRC = "tailwindlabs/heroicons/optimized/24/outline";
+const OUTLINE_SRC = `tailwindlabs/heroicons/optimized/24/outline${version}`;
 const OUTLINE_DIST = join(TMP, "outline/24");
 
 // Start the whole machinery
