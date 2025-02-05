@@ -19,7 +19,7 @@ const SOLID_DIST = join(TMP, "solid/24");
 // const SOLID_MINI_SRC = `tailwindlabs/heroicons/optimized/20/solid${version}`;
 // const SOLID_MINI_DIST = join(TMP, "solid/20");
 
-const OUTLINE_SRC = `tailwindlabs/heroicons/optimized/24/outline${version}`;
+const OUTLINE_SRC = `tailwindlabs/heroicons/optimized/outline${version}`;
 const OUTLINE_DIST = join(TMP, "outline/24");
 
 // Start the whole machinery
