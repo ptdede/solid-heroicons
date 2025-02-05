@@ -1,8 +1,8 @@
-dist
+# dist
 node_modules
-outline
-solid
-solid-mini
+# outline
+# solid
+# solid-mini
 
 .yarn/*
 !.yarn/cache
