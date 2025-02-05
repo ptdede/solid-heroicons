@@ -13,11 +13,11 @@ const version = "#v1.0.6";
 
 const TMP = join(process.cwd(), "tmp");
 
-const SOLID_SRC = `tailwindlabs/heroicons/optimized/24/solid${version}`;
+const SOLID_SRC = `tailwindlabs/heroicons/optimized/solid${version}`;
 const SOLID_DIST = join(TMP, "solid/24");
 
-const SOLID_MINI_SRC = `tailwindlabs/heroicons/optimized/20/solid${version}`;
-const SOLID_MINI_DIST = join(TMP, "solid/20");
+// const SOLID_MINI_SRC = `tailwindlabs/heroicons/optimized/20/solid${version}`;
+// const SOLID_MINI_DIST = join(TMP, "solid/20");
 
 const OUTLINE_SRC = `tailwindlabs/heroicons/optimized/24/outline${version}`;
 const OUTLINE_DIST = join(TMP, "outline/24");
@@ -31,18 +31,18 @@ main().catch((e) => {
 async function main() {
   // Remove previous artifact
   removeSync(SOLID_DIST);
-  removeSync(SOLID_MINI_DIST);
+  // removeSync(SOLID_MINI_DIST);
   removeSync(OUTLINE_DIST);
 
   // Clone the original SVG icons from the repo.
-  const [solidGit, solidMiniGit, outlineGit] = [
+  const [solidGit, outlineGit] = [
     SOLID_SRC,
-    SOLID_MINI_SRC,
+    // SOLID_MINI_SRC,
     OUTLINE_SRC,
   ].map((repo) => degit(repo, { cache: false, verbose: true, force: true }));
 
   await solidGit.clone(SOLID_DIST);
-  await solidMiniGit.clone(SOLID_MINI_DIST);
+  // await solidMiniGit.clone(SOLID_MINI_DIST);
   await outlineGit.clone(OUTLINE_DIST);
 
   // Generate the icons in the proper folder
@@ -52,12 +52,12 @@ async function main() {
     outline: false,
     mini: false,
   });
-  await generateIcons({
-    path: SOLID_MINI_DIST,
-    name: "solid-mini",
-    outline: false,
-    mini: true,
-  });
+  // await generateIcons({
+  //   path: SOLID_MINI_DIST,
+  //   name: "solid-mini",
+  //   outline: false,
+  //   mini: true,
+  // });
   await generateIcons({
     path: OUTLINE_DIST,
     name: "outline",
