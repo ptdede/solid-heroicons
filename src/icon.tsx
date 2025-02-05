@@ -35,7 +35,7 @@ export const Icon: Component<Props> = (props) => {
 
   return (
     <svg
-      viewBox={internal.path.mini ? "0 0 20 20" : "0 0 24 24"}
+      viewBox={internal.path.outline ? "0 0 24 24" : "0 0 20 20"}
       fill={internal.path.outline ? "none" : "currentColor"}
       stroke={internal.path.outline ? "currentColor" : "none"}
       stroke-width={internal.path.outline ? 1.5 : undefined}

@@ -24,7 +24,7 @@ const Icon = props => {
   const [internal, external] = splitProps(props, ["path"]);
   return ssrElement("svg", mergeProps({
     get viewBox() {
-      return internal.path.mini ? "0 0 20 20" : "0 0 24 24";
+      return internal.path.outline ? "0 0 24 24" : "0 0 20 20";
     },
     get fill() {
       return internal.path.outline ? "none" : "currentColor";

@@ -20,7 +20,7 @@ import { splitProps } from "solid-js";
  */
 export const Icon = (props) => {
     const [internal, external] = splitProps(props, ["path"]);
-    return (<svg viewBox={internal.path.mini ? "0 0 20 20" : "0 0 24 24"} fill={internal.path.outline ? "none" : "currentColor"} stroke={internal.path.outline ? "currentColor" : "none"} stroke-width={internal.path.outline ? 1.5 : undefined} {...external}>
+    return (<svg viewBox={internal.path.outline ? "0 0 24 24" : "0 0 20 20"} fill={internal.path.outline ? "none" : "currentColor"} stroke={internal.path.outline ? "currentColor" : "none"} stroke-width={internal.path.outline ? 1.5 : undefined} {...external}>
       {internal.path.path}
     </svg>);
 };
